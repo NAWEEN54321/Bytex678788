@@ -1,148 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BYTEX AVIATOR PREDICTOR PRO</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: url('https://dl.dropboxusercontent.com/scl/fi/opptdtk92bl4jvw6t31yq/IMG-20250218-WA0007.jpg?rlkey=4br287q5onf9v4myjb7usbk1d&st=rhx8f9zt') no-repeat center center fixed;
-            background-size: cover;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .title-box {
-            width: 80%;
-            max-width: 500px;
-            margin: 30px auto;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.8);
-            color: red;
-            font-size: 22px;
-            font-weight: bold;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        .date-time-box {
-            width: 80%;
-            max-width: 400px;
-            margin: 10px auto;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-        }
-        .button-container {
-            width: 80%;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.9);
-            border-radius: 20px;
-            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-        }
+  <meta charset="UTF-8">
+  <title>BYTEX AVIATOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://dl.dropboxusercontent.com/scl/fi/opptdtk92bl4jvw6t31yq/IMG-20250218-WA0007.jpg?rlkey=4br287q5onf9v4myjb7usbk1d&st=rhx8f9zt') no-repeat center center fixed;
+      background-size: cover;
+    }
 
-        @keyframes gradientAnimation {
-            0%   { background: linear-gradient(45deg, #ff0000, #ff7300); } 
-            10%  { background: linear-gradient(45deg, #ff7300, #ffeb00); } 
-            20%  { background: linear-gradient(45deg, #ffeb00, #00ff00); } 
-            30%  { background: linear-gradient(45deg, #00ff00, #00ffee); } 
-            40%  { background: linear-gradient(45deg, #00ffee, #0073ff); } 
-            50%  { background: linear-gradient(45deg, #0073ff, #6d00ff); } 
-            60%  { background: linear-gradient(45deg, #6d00ff, #ff00ff); } 
-            70%  { background: linear-gradient(45deg, #ff00ff, #ff0000); } 
-            80%  { background: linear-gradient(45deg, #ff0000, #00ff00); } 
-            90%  { background: linear-gradient(45deg, #00ff00, #ffeb00); } 
-            100% { background: linear-gradient(45deg, #ffeb00, #ff0000); } 
-        }
+    .notification {
+      background-color: #ffe6e6;
+      border: 4px solid transparent;
+      padding: 20px;
+      width: 90%;
+      margin: 50px auto;
+      font-family: Arial, sans-serif;
+      border-radius: 15px;
+      position: relative;
+      text-align: center;
+      animation: edgeLight 4s linear infinite;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+      color: #000000;
+    }
 
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            background-size: 300% 300%;
-            animation: gradientAnimation 5s infinite linear;
-            transition: 0.3s;
-        }
-        .whatsapp-group {
-            background: #25D366;
-            animation: gradientAnimation 5s infinite linear;
-        }
-        .whatsapp-box {
-            margin-top: 20px;
-            padding: 10px;
-            background: rgba(0, 255, 0, 0.8);
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        .whatsapp-box a {
-            color: white;
-            text-decoration: none;
-        }
-    </style>
+    @keyframes edgeLight {
+      0%   { box-shadow: 0 0 10px 2px red; border-color: red; }
+      25%  { box-shadow: 0 0 15px 3px orange; border-color: orange; }
+      50%  { box-shadow: 0 0 15px 3px yellow; border-color: yellow; }
+      75%  { box-shadow: 0 0 15px 3px lime; border-color: lime; }
+      100% { box-shadow: 0 0 10px 2px red; border-color: red; }
+    }
+
+    .close-btn {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    a {
+      color: #c00000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .main-content {
+      display: none;
+      text-align: center;
+      color: white;
+    }
+
+    .title-box {
+      width: 80%;
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.8);
+      color: red;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .date-time-box {
+      width: 80%;
+      max-width: 400px;
+      margin: 10px auto;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.8);
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .button-container {
+      width: 80%;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 20px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      background: linear-gradient(45deg, #ff0000, #00ff00);
+      background-size: 300% 300%;
+      animation: gradientAnimation 5s infinite linear;
+    }
+
+    @keyframes gradientAnimation {
+      0%   { background: linear-gradient(45deg, #ff0000, #ff7300); }
+      25%  { background: linear-gradient(45deg, #ff7300, #ffeb00); }
+      50%  { background: linear-gradient(45deg, #00ff00, #00ffee); }
+      75%  { background: linear-gradient(45deg, #0073ff, #6d00ff); }
+      100% { background: linear-gradient(45deg, #ff00ff, #ff0000); }
+    }
+
+    .whatsapp-box {
+      margin-top: 20px;
+      padding: 10px;
+      background: rgba(0, 255, 0, 0.8);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .whatsapp-box a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="title-box">
-        BYTEX AVIATOR PREDICTOR PRO
-    </div>
+  <!-- Notification Box -->
+  <div class="notification" id="notifBox">
+    <p><strong>🔴BYTEX PREDICTOR NOTIFICATIONS JUST NOW🔴</strong></p>
+    <p>🔴 BYTEX අදිපති විසින් ඔබ සියලු සාමාජිකයන් සදහා දැනුම් දෙන ලද ඉතා විශේෂ දැනුම් දීමකි ඔබ ලක්ෂ විස්සකට වඩා පරාදයි නම් හොදින් කියවන්න 🔴</p>
+    <p>🔴 මෙම BYTEX PREDICTOR මගින් දැනට සාර්ථකව AVIATOR සදහා ප්‍රධාන වශයෙන් කෙටි කාලයක් තුල සාර්ථක සිග්නල් ලබා දීම සිදු කරයි. ඔබ දැනට ලක්ෂ ගානක් පරාජයට පත් වී අන්ත අසරණ තත්වයට පත් වී ඇති අතර ඔබගේ රත්තරන් බඩු, ඔබගේ මුදල්, ඔබගේ දේපල, ඔබගේ වාහන සහ අනෙකුත් සියලු දේ විකුණා හෝ උගස් තබා හෝ නයට මුදල් ලබා ගනිමින් 1XBET ක්‍රීඩාවට මුදල් යොදා පරාද වී ඇත.</p>
+    <p>ඔබට අවශ්‍ය නම් අපගේ LIVE WHATSAPP COLL සම්බන්ද වී මා ලබා දෙන 100 ODD, 50 ODD BET කරන්න. පැයකින් ලක්ෂ තිහක් සෙවීමට අවශ්‍ය නම් අනිවාර්යෙන් ඔබගේ බෑන්ක් ගිණුම තුල රුපියල් ලක්ෂ දෙකක් තිබිය යුතුයි.</p>
+    <p>ලක්ෂ දෙකක් අනිවාර්යෙන් තිබේ නම් මාගේ දුරකථන අංකයට පණිවිඩයක් එවන්න. අපේ LIVE BYTEX GROUP COLL සම්බන්ද කර LIVE SIGNAL ලබා දි ඔබගේ මුදල් වැඩි කර දෙනු ලැබේ. ස්තුතියි!</p>
+    <p>වට්සැප් දුරකථන අංකය: <a href="https://wa.me/+94767324225" target="_blank">+94 76 732 4225</a></p>
+    <button class="close-btn" onclick="closeNotification()">CLOSE</button>
+  </div>
 
-    <div class="date-time-box" id="dateTimeBox">
-        Loading Date & Time...
-    </div>
-
+  <!-- Main Content Hidden Initially -->
+  <div class="main-content" id="mainContent">
+    <div class="title-box">BYTEX AVIATOR PREDICTOR PRO</div>
+    <div class="date-time-box" id="dateTimeBox">Loading Date & Time...</div>
     <div class="button-container">
-        <a class="btn" href="https://naween54321.github.io/1XBET_2ODD_RISK-3ODD/" target="_blank">
-            1XBET AVIATOR 2 ODD RISK 3 ODD
-        </a>
-
-        <a class="btn" href="https://naween54321.github.io/BYTEX_25-ODD_1XBET_AVIATOR/" target="_blank">
-            BYTEX 1XBET AVIATOR VIP SIGNAL 35 ODD RISK 50 ODD 100 ODD
-        </a>
-
-        <a class="btn" href="https://naween1234.github.io/byttex_aviator_pink_pro.sl.html" target="_blank">BYTEX AVIATOR PINK TIME CALCULATED</a>
-        <a class="btn" href="https://naween54321.github.io/BYTEX_5ODD/" target="_blank">BYTEX AVIATOR 5 ODD TIME ALGORITHM</a>
-        <a class="btn" href="https://manika688.github.io/Bytedc/" target="_blank">BYTEX AVIATOR PINK ALGORITHM PRO</a>
-        <a class="btn" href="https://dinjfr.github.io/Gjjfds/" target="_blank">BYTEX 7 ODD TIME AUTOMATIC</a>
-        <a class="btn" href="https://naween8957.github.io/Frhtda/" target="_blank">BYTEX BET LKR SISTEM (MARTINGALE)</a>
-        <a class="btn" href="https://naween895.github.io/Sql/" target="_blank">1XBET Lanka - Deposit Methods</a>
-        <a class="btn" href="https://1235677863.github.io/BYTEX123/" target="_blank">888STRZ CRASH SIGNAL REAL-TIME</a>
-        <a class="btn" href="https://naween54321.github.io/BYTEX_CRASH_SRI_LANKA/" target="_blank">1XBET CRASH LIVE SIGNAL</a>
-
-        <div class="whatsapp-box">
-            <a href="https://wa.me/94767324225" target="_blank">BYTEX WHATSAPP OWNER +94 76 732 4225</a>
-        </div>
-
-        <a class="btn whatsapp-group" href="https://chat.whatsapp.com/Kiuaab7aVmW14cyBOfKWnH" target="_blank">JOIN WHATSAPP BYTEX GROUP</a>
-
-        <!-- NEW BUTTON -->
-        <a class="btn" href="https://sportvot.com/tv/kab" target="_blank">LIVE MATCH WATCH TODAY</a>
+      <a class="btn" href="https://naween54321.github.io/1XBET_2ODD_RISK-3ODD/" target="_blank">1XBET AVIATOR 2 ODD RISK 3 ODD</a>
+      <a class="btn" href="https://naween54321.github.io/BYTEX_25-ODD_1XBET_AVIATOR/" target="_blank">BYTEX 1XBET AVIATOR VIP SIGNAL 35 ODD</a>
+      <a class="btn" href="https://naween1234.github.io/byttex_aviator_pink_pro.sl.html" target="_blank">BYTEX AVIATOR PINK TIME CALCULATED</a>
+      <a class="btn" href="https://naween54321.github.io/BYTEX_5ODD/" target="_blank">BYTEX AVIATOR 5 ODD TIME ALGORITHM</a>
+      <a class="btn" href="https://manika688.github.io/Bytedc/" target="_blank">BYTEX AVIATOR PINK ALGORITHM PRO</a>
+      <a class="btn" href="https://dinjfr.github.io/Gjjfds/" target="_blank">BYTEX 7 ODD TIME AUTOMATIC</a>
+      <a class="btn" href="https://naween8957.github.io/Frhtda/" target="_blank">BYTEX BET LKR SISTEM (MARTINGALE)</a>
+      <a class="btn" href="https://naween895.github.io/Sql/" target="_blank">1XBET Lanka - Deposit Methods</a>
+      <a class="btn" href="https://1235677863.github.io/BYTEX123/" target="_blank">888STRZ CRASH SIGNAL REAL-TIME</a>
+      <a class="btn" href="https://naween54321.github.io/BYTEX_CRASH_SRI_LANKA/" target="_blank">1XBET CRASH LIVE SIGNAL</a>
+      <div class="whatsapp-box">
+        <a href="https://wa.me/94767324225" target="_blank">BYTEX WHATSAPP OWNER +94 76 732 4225</a>
+      </div>
+      <a class="btn" href="https://chat.whatsapp.com/Kiuaab7aVmW14cyBOfKWnH" target="_blank">JOIN WHATSAPP BYTEX GROUP</a>
+      <a class="btn" href="https://sportvot.com/tv/kab" target="_blank">LIVE MATCH WATCH TODAY</a>
     </div>
+  </div>
 
-    <script>
-        function updateDateTime() {
-            let now = new Date();
-            let options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            document.getElementById('dateTimeBox').innerHTML = now.toLocaleDateString('en-US', options);
-        }
-        setInterval(updateDateTime, 1000);
-        updateDateTime();
-    </script>
+  <script>
+    function closeNotification() {
+      document.getElementById('notifBox').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+    }
+
+    function updateDateTime() {
+      let now = new Date();
+      let options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById('dateTimeBox').innerHTML = now.toLocaleDateString('en-US', options);
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
 
 </body>
-                </html>
+</html>
